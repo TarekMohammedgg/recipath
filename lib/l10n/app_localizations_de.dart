@@ -18,6 +18,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get logout => 'Abmelden';
 
   @override
+  String get reallyLogout => 'Möchten Sie sich wirklich abmelden?';
+
+  @override
   String get eMail => 'E-Mail';
 
   @override
@@ -42,6 +45,23 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get passwordLength => 'Passwort muss mindestens 12 Zeichen lang sein';
+
+  @override
+  String get changePassword => 'Passwort ändern';
+
+  @override
+  String get passwordChanged => 'Passwort erfolgreich geändert';
+
+  @override
+  String get resetPassword => 'Passwort zurücksetzen';
+
+  @override
+  String get reallyResetPassword =>
+      'Möchten Sie das Passwort wirklich zurücksetzen?';
+
+  @override
+  String get resetMailSent =>
+      'Ein Bestätigungscode wurde an Ihre E-Mail-Adresse gesendet.\nBitte geben Sie ihn unten ein.';
 
   @override
   String get verifactionEMailSent => 'Bestätigungs-E-Mail wurde gesendet';
@@ -528,6 +548,9 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get importImage => 'Aus Bild importieren';
+
+  @override
+  String get imageSaved => 'Bild gespeichert';
 
   @override
   String get importUrl => 'Aus URL importieren';

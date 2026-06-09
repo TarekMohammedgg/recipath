@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:recipath/common.dart';
 import 'package:recipath/data/recipe_data/recipe_data.dart';
 import 'package:recipath/data/tag_data/tag_type_enum.dart';
 import 'package:recipath/data/unit_enum.dart';
@@ -39,13 +40,17 @@ class RecipeSearchView extends ConsumerWidget {
       ),
       items: data.recipe,
       toSearchable: (item) => item.recipeData.toReadable(
-        groceries: data.grocery,
+        groceries: data.groceryMap,
         unitLocalized: unitLocalized,
         doubleNumberFormat: doubleNumberFormat,
       ),
       toWidget: (item) => Dismissible(
         key: Key(item.recipeData.id),
-        child: CompactRecipeItem(compactRecipeData: item),
+        child: CompactRecipeItem(
+          compactRecipeData: item,
+          groceryMap: data.groceryMap,
+          storageData: data.storageMap,
+        ),
         confirmDismiss: (direction) async {
           if (direction == DismissDirection.startToEnd) {
             ref
@@ -60,6 +65,7 @@ class RecipeSearchView extends ConsumerWidget {
           return false;
         },
       ),
+      listViewPadding: edgeInsetsWithBottomPadding(context: context),
       sort: (a, b) => a.recipeData.title.compareTo(b.recipeData.title),
       emptyState: EmptyState(
         hint: localization.createRecipeHint,

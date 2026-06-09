@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/application/recipe_tag_modifier/recipe_tag_modifier_notifier.dart';
 import 'package:recipath/application_constants.dart';
+import 'package:recipath/common.dart';
 import 'package:recipath/data/recipe_data/recipe_data.dart';
 import 'package:recipath/data/recipe_tag_data/recipe_tag_data.dart';
 import 'package:recipath/helper/go_router_extension.dart';
@@ -9,7 +10,6 @@ import 'package:recipath/l10n/app_localizations.dart';
 import 'package:recipath/widgets/generic/cached_async_value_wrapper.dart';
 import 'package:recipath/widgets/generic/image_viewer.dart';
 import 'package:recipath/widgets/screens/grocery_screen/providers/grocery_notifier.dart';
-import 'package:recipath/widgets/screens/recipe_screen/local_image.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/ingredients_list.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/nutriments_list.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/providers/recipe_overview_screen_notifier.dart';
@@ -64,6 +64,7 @@ class RecipeOverviewScreen extends ConsumerWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: SingleChildScrollView(
+              padding: edgeInsetsWithBottomPadding(context: context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -72,9 +73,7 @@ class RecipeOverviewScreen extends ConsumerWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
                         child: ImageViewer(
-                          child: LocalImage(
-                            fileName: data.recipeData.imageName!,
-                          ),
+                          fileName: data.recipeData.imageName!,
                         ),
                       ),
                     ),
@@ -195,7 +194,6 @@ class RecipeOverviewScreen extends ConsumerWidget {
                         ),
                       ),
                     ),
-                  SizedBox(height: 78),
                 ],
               ),
             ),

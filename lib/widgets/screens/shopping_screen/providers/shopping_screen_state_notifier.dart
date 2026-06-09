@@ -1,3 +1,4 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/data/grocery_data/grocery_data.dart';
 import 'package:recipath/data/storage_data/storage_data.dart';
@@ -30,16 +31,17 @@ Future<ShoppingScreenState> shoppingScreenStateNotifier(Ref ref) async {
 
   final Map<String, List<BaseShoppingItemData>> clusteredData = {};
 
+  final doneList = clusteredData.putIfAbsent(
+    ShoppingTypeEnum.done.name,
+    () => [],
+  );
+
   if (cluster) {
     final tagLookup = await ref.watch(tagsPerGroceryProvider.future);
 
     for (final shoppingItem in shoppingData.values) {
       if (shoppingItem.done) {
-        final shoppingList = clusteredData.putIfAbsent(
-          ShoppingTypeEnum.normal.name,
-          () => [],
-        );
-        shoppingList.add(ShoppingItemData(data: shoppingItem));
+        doneList.add(ShoppingItemData(data: shoppingItem));
       } else {
         final tags = tagLookup[shoppingItem.ingredient.groceryId] ?? {};
 
@@ -62,10 +64,14 @@ Future<ShoppingScreenState> shoppingScreenStateNotifier(Ref ref) async {
       ShoppingTypeEnum.normal.name,
       () => [],
     );
-    shoppingList.addAll([
-      for (final shoppingItem in shoppingData.values)
-        ShoppingItemData(data: shoppingItem),
-    ]);
+    for (final shoppingItem in shoppingData.values) {
+      final data = ShoppingItemData(data: shoppingItem);
+      if (shoppingItem.done) {
+        doneList.add(data);
+      } else {
+        shoppingList.add(data);
+      }
+    }
   }
 
   if (quickShoppingData.isNotEmpty && !tagFiltersActive) {
@@ -73,10 +79,15 @@ Future<ShoppingScreenState> shoppingScreenStateNotifier(Ref ref) async {
       ShoppingTypeEnum.quick.name,
       () => [],
     );
-    quickShoppingList.addAll([
-      for (final shoppingItem in quickShoppingData.values)
-        QuickShoppingItemData(data: shoppingItem),
-    ]);
+
+    for (final shoppingItem in quickShoppingData.values) {
+      final data = QuickShoppingItemData(data: shoppingItem);
+      if (shoppingItem.done) {
+        doneList.add(data);
+      } else {
+        quickShoppingList.add(data);
+      }
+    }
   }
 
   return ShoppingScreenState(
@@ -98,8 +109,8 @@ class ShoppingScreenState {
   });
 
   final Map<String, List<BaseShoppingItemData>> clusteredData;
-  final Map<String, GroceryData> groceryMap;
-  final Map<String, StorageData> storage;
-  final Map<String, TagData> tags;
+  final IMap<String, GroceryData> groceryMap;
+  final IMap<String, StorageData> storage;
+  final IMap<String, TagData> tags;
   final bool tagFiltersActive;
 }

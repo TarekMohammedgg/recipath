@@ -1,3 +1,4 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/data/ingredient_data/ingredient_data.dart';
@@ -17,7 +18,7 @@ class RecipeIngredientView extends ConsumerStatefulWidget {
     super.key,
   });
 
-  final List<IngredientData> ingredients;
+  final IList<IngredientData> ingredients;
   final void Function(List<IngredientData> newIngredients) onChanged;
 
   final ScrollController? controller;
@@ -76,10 +77,7 @@ class _RecipeIngredientViewState extends ConsumerState<RecipeIngredientView> {
               scrollController: widget.controller,
               shrinkWrap: true,
               children: items,
-              onReorder: (int oldIndex, int newIndex) {
-                if (oldIndex < newIndex) {
-                  newIndex -= 1;
-                }
+              onReorderItem: (oldIndex, newIndex) {
                 final item = listCopy.removeAt(oldIndex);
                 listCopy.insert(newIndex, item);
                 widget.onChanged(listCopy);
@@ -90,7 +88,7 @@ class _RecipeIngredientViewState extends ConsumerState<RecipeIngredientView> {
               builder: (data) {
                 return CompactIngredientView(
                   ingredients: widget.ingredients,
-                  storageData: data.storage,
+                  storageData: data.storageMap,
                   groceryMap: data.groceryMap,
                 );
               },

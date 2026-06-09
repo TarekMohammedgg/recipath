@@ -31,27 +31,28 @@ enum AiProviderEnum {
     handshakeOptions: ChatMistralAIOptions(maxTokens: 1),
   ),
 
-  // @JsonValue("Moonshot")
-  // moonshot(
-  //   displayName: 'Moonshot Kimi',
-  //   defaultModel: 'kimi-k2.5',
-  //   tokenUrl: 'https://platform.moonshot.ai/console/api-keys',
-  //   handshakeOptions: ChatOpenAIOptions(maxTokens: 1),
-  // ),
-
-  @JsonValue("DeepSeek")
-  deepSeek(
-    displayName: 'DeepSeek',
-    defaultModel: 'deepseek-chat',
-    tokenUrl: 'https://platform.deepseek.com/api_keys',
+  @JsonValue("Moonshot")
+  moonshot(
+    displayName: 'Moonshot Kimi',
+    defaultModel: 'kimi-k2.6',
+    tokenUrl: 'https://platform.moonshot.ai/console/api-keys',
     handshakeOptions: ChatOpenAIOptions(maxTokens: 1),
-    multimodal: false,
   ),
+
+  // Tools dont return values after V4 release
+  // @JsonValue("DeepSeek")
+  // deepSeek(
+  //   displayName: 'DeepSeek',
+  //   defaultModel: 'deepseek-v4-flash',
+  //   tokenUrl: 'https://platform.deepseek.com/api_keys',
+  //   handshakeOptions: ChatOpenAIOptions(maxTokens: 1),
+  //   multimodal: false,
+  // ),
 
   @JsonValue("OpenAi")
   openAi(
     displayName: 'OpenAI',
-    defaultModel: 'gpt-4.1-mini',
+    defaultModel: 'gpt-5.4-mini',
     tokenUrl: 'https://platform.openai.com/api-keys',
     handshakeOptions: ChatOpenAIOptions(maxTokens: 1),
   );
@@ -67,6 +68,7 @@ enum AiProviderEnum {
     required this.defaultModel,
     required this.tokenUrl,
     required this.handshakeOptions,
+    // ignore: unused_element_parameter
     this.multimodal = true,
   });
 }

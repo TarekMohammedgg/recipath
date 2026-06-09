@@ -120,6 +120,12 @@ abstract class AppLocalizations {
   /// **'Logout'**
   String get logout;
 
+  /// No description provided for @reallyLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to logout?'**
+  String get reallyLogout;
+
   /// No description provided for @eMail.
   ///
   /// In en, this message translates to:
@@ -167,6 +173,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password needs to be at least 12 letters long'**
   String get passwordLength;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change password'**
+  String get changePassword;
+
+  /// No description provided for @passwordChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Successfuly changed'**
+  String get passwordChanged;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset password'**
+  String get resetPassword;
+
+  /// No description provided for @reallyResetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to reset the password?'**
+  String get reallyResetPassword;
+
+  /// No description provided for @resetMailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'A verification code has been sent to your email.\nPlease enter it below.'**
+  String get resetMailSent;
 
   /// No description provided for @verifactionEMailSent.
   ///
@@ -1079,6 +1115,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import from image'**
   String get importImage;
+
+  /// No description provided for @imageSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Image saved'**
+  String get imageSaved;
 
   /// No description provided for @importUrl.
   ///

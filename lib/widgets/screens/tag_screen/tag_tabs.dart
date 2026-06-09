@@ -1,4 +1,6 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
+import 'package:recipath/common.dart';
 import 'package:recipath/data/tag_data/tag_data.dart';
 import 'package:recipath/data/tag_data/tag_type_enum.dart';
 import 'package:recipath/helper/go_router_extension.dart';
@@ -15,7 +17,7 @@ class TagTabs extends StatelessWidget {
     super.key,
   });
 
-  final Map<TagTypeEnum, Map<String, TagData>> typedTags;
+  final IMap<TagTypeEnum, IMap<String, TagData>> typedTags;
 
   final TabController tabController;
 
@@ -43,6 +45,9 @@ class TagTabs extends StatelessWidget {
                   items: typedTags[tagType]!.values.toList(),
                   toSearchable: (item) => "${item.name} ${item.description}",
                   toWidget: (item) => TagItem(data: item),
+                  listViewPadding: edgeInsetsWithBottomPadding(
+                    context: context,
+                  ),
                   sort: (a, b) => a.name.compareTo(b.name),
                   emptyState: EmptyState(
                     hint: localization.createTagHint,

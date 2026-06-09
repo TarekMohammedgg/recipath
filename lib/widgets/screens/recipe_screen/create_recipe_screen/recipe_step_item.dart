@@ -1,3 +1,4 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:random_string/random_string.dart';
@@ -63,6 +64,7 @@ class RecipeStepItem extends ConsumerWidget {
                       TextFormField(
                         maxLines: null,
                         minLines: 2,
+                        textCapitalization: .sentences,
                         decoration: InputDecoration(
                           labelText: localization.objectDescription(
                             "${localization.step} ${index + 1}",
@@ -80,7 +82,7 @@ class RecipeStepItem extends ConsumerWidget {
                           controller: controller,
                           ingredients: data.ingredients,
                           onChanged: (newIngredients) => onChanged(
-                            data.copyWith(ingredients: newIngredients),
+                            data.copyWith(ingredients: newIngredients.lock),
                           ),
                         ),
                       ElevatedButton.icon(
@@ -113,7 +115,7 @@ class RecipeStepItem extends ConsumerWidget {
                                             groceryId: grocery.id,
                                           ),
                                     )
-                                    .toList(),
+                                    .toIList(),
                               ),
                             );
                           }

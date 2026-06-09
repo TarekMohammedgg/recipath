@@ -18,6 +18,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get logout => 'Cerrar sesión';
 
   @override
+  String get reallyLogout => '¿Realmente quieres cerrar sesión?';
+
+  @override
   String get eMail => 'correo electrónico';
 
   @override
@@ -42,6 +45,23 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get passwordLength => 'La contraseña debe tener al menos 12 letras.';
+
+  @override
+  String get changePassword => 'Cambiar contraseña';
+
+  @override
+  String get passwordChanged => 'Contraseña cambiada exitosamente';
+
+  @override
+  String get resetPassword => 'Restablecer contraseña';
+
+  @override
+  String get reallyResetPassword =>
+      '¿Realmente quieres restablecer la contraseña?';
+
+  @override
+  String get resetMailSent =>
+      'Se ha enviado un código de verificación a su correo electrónico.\nPor favor, ingréselo a continuación.';
 
   @override
   String get verifactionEMailSent =>
@@ -529,6 +549,9 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get importImage => 'Importar desde imagen';
+
+  @override
+  String get imageSaved => 'Imagen guardada';
 
   @override
   String get importUrl => 'Importar desde URL';

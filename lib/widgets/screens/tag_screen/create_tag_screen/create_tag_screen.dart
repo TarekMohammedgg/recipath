@@ -33,7 +33,7 @@ class _CreateTagScreenState extends ConsumerState<CreateTagScreen> {
   @override
   void initState() {
     super.initState();
-    final existingData = ref.read(tagProvider).value![widget.tagId];
+    final existingData = ref.read(tagProvider).value![widget.tagId ?? ""];
     if (existingData == null) {
       final id = randomAlphaNumeric(16);
       initialData = TagData(
@@ -117,6 +117,7 @@ class _CreateTagScreenState extends ConsumerState<CreateTagScreen> {
                 children: [
                   TextFormField(
                     controller: nameController,
+                    textCapitalization: .sentences,
                     decoration: InputDecoration(labelText: localization.name),
                     maxLength: 20,
                     onChanged: (value) => setState(
@@ -125,6 +126,7 @@ class _CreateTagScreenState extends ConsumerState<CreateTagScreen> {
                   ),
                   TextFormField(
                     controller: descriptionController,
+                    textCapitalization: .sentences,
                     decoration: InputDecoration(
                       labelText: localization.description,
                     ),

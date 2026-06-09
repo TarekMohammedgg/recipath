@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logout => 'Logout';
 
   @override
+  String get reallyLogout => 'Do you really want to logout?';
+
+  @override
   String get eMail => 'E-Mail';
 
   @override
@@ -42,6 +45,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordLength => 'Password needs to be at least 12 letters long';
+
+  @override
+  String get changePassword => 'Change password';
+
+  @override
+  String get passwordChanged => 'Password Successfuly changed';
+
+  @override
+  String get resetPassword => 'Reset password';
+
+  @override
+  String get reallyResetPassword => 'Do you really want to reset the password?';
+
+  @override
+  String get resetMailSent =>
+      'A verification code has been sent to your email.\nPlease enter it below.';
 
   @override
   String get verifactionEMailSent => 'Verifaction E-Mail has been sent';
@@ -521,6 +540,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importImage => 'Import from image';
+
+  @override
+  String get imageSaved => 'Image saved';
 
   @override
   String get importUrl => 'Import from Url';

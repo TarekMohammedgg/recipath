@@ -12,6 +12,7 @@ import 'package:recipath/widgets/generic/searchable_list.dart';
 import 'package:recipath/widgets/providers/double_number_format_notifier.dart';
 import 'package:recipath/widgets/screens/grocery_screen/grocery_routes.dart';
 import 'package:recipath/widgets/screens/grocery_screen/providers/grocery_notifier.dart';
+import 'package:smart_input_fields/smart_input_fields.dart';
 
 class AddIngredientDialog extends ConsumerStatefulWidget {
   const AddIngredientDialog({
@@ -140,7 +141,7 @@ class _AddIngredientDialogState extends ConsumerState<AddIngredientDialog> {
                       children: [
                         SizedBox(
                           width: 100,
-                          child: TextFormField(
+                          child: FocusInputField(
                             controller: amountController,
                             decoration: InputDecoration(
                               labelText: localization.amount,
@@ -148,12 +149,21 @@ class _AddIngredientDialogState extends ConsumerState<AddIngredientDialog> {
                             keyboardType: TextInputType.numberWithOptions(
                               decimal: true,
                             ),
-                            validator: (value) =>
-                                value == null ||
-                                    value.isEmpty ||
-                                    doubleNumberFormat.tryParse(value) == 0
-                                ? localization.addAmount
-                                : null,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return localization.addAmount;
+                              }
+
+                              final newValue = doubleNumberFormat.tryParse(
+                                value,
+                              );
+
+                              if (newValue == 0 || newValue == null) {
+                                return localization.addAmount;
+                              }
+
+                              return null;
+                            },
                           ),
                         ),
                         Expanded(

@@ -18,6 +18,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get logout => 'Déconnexion';
 
   @override
+  String get reallyLogout => 'Voulez-vous vraiment vous déconnecter ?';
+
+  @override
   String get eMail => 'E-Mail';
 
   @override
@@ -43,6 +46,23 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get passwordLength =>
       'Le mot de passe doit comporter au moins 12 lettres';
+
+  @override
+  String get changePassword => 'Changer le mot de passe';
+
+  @override
+  String get passwordChanged => 'Mot de passe modifié avec succès';
+
+  @override
+  String get resetPassword => 'Réinitialiser le mot de passe';
+
+  @override
+  String get reallyResetPassword =>
+      'Voulez-vous vraiment réinitialiser le mot de passe ?';
+
+  @override
+  String get resetMailSent =>
+      'Un code de vérification a été envoyé à votre adresse e-mail.\nVeuillez le saisir ci-dessous.';
 
   @override
   String get verifactionEMailSent => 'Un e-mail de vérification a été envoyé';
@@ -531,6 +551,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get importImage => 'Importer depuis une image';
+
+  @override
+  String get imageSaved => 'Image enregistrée';
 
   @override
   String get importUrl => 'Importer depuis une URL';
