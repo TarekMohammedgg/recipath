@@ -50,6 +50,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get changePassword => 'Passwort ändern';
 
   @override
+  String get deleteAccount => 'Konto löschen';
+
+  @override
+  String get reallyDeleteAccount => 'Möchten Sie Ihr Konto wirklich löschen?';
+
+  @override
+  String get deleteAccountWarning =>
+      'Sie werden auf eine Website weitergeleitet, um die Löschung anzufordern. Dies löscht dauerhaft Ihr Konto und Ihre synchronisierten Daten.';
+
+  @override
   String get passwordChanged => 'Passwort erfolgreich geändert';
 
   @override
@@ -69,6 +79,10 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get couldNotAuthenticate =>
       'Benutzer konnte nicht authentifiziert werden';
+
+  @override
+  String get userAlreadyExists =>
+      'Ein Konto mit dieser E-Mail existiert bereits';
 
   @override
   String searchFor(String type) {
@@ -389,6 +403,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get privacyPolicy => 'Datenschutzerklärung';
 
   @override
+  String get termsOfUse => 'Nutzungsbedingungen';
+
+  @override
   String get darkMode => 'Dunkelmodus';
 
   @override
@@ -521,8 +538,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get selectOne => 'Bitte wählen Sie einen Artikel aus';
 
   @override
-  String get downloadToImport =>
-      'Laden Sie Recipath herunter:\nhttps://play.google.com/store/apps/details?id=com.cunibongames.recipath\n\nUm diese Rezepte zu importieren';
+  String downloadToImport(String storeLink) {
+    return 'Laden Sie ReciPath herunter:\n$storeLink\n\nUm diese Rezepte zu importieren';
+  }
 
   @override
   String get aiToken => 'KI-Token';

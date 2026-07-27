@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/l10n/app_localizations.dart';
@@ -11,7 +13,9 @@ import 'package:recipath/widgets/screens/settings_screen/appearance/storage_togg
 import 'package:recipath/widgets/screens/settings_screen/auth/manage_supscription_button.dart';
 import 'package:recipath/widgets/screens/settings_screen/data/ai_token.dart';
 import 'package:recipath/widgets/screens/settings_screen/data/change_password.dart';
+import 'package:recipath/widgets/screens/settings_screen/data/delete_account.dart';
 import 'package:recipath/widgets/screens/settings_screen/data/privacy_policy.dart';
+import 'package:recipath/widgets/screens/settings_screen/data/terms_of_use.dart';
 import 'package:recipath/widgets/screens/settings_screen/providers/version_tag.dart';
 import 'package:recipath/widgets/screens/settings_screen/setting_section.dart';
 
@@ -33,7 +37,7 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 LocalePicker(),
                 DarkModeToggle(),
-                MaterialYouToggle(),
+                if (Platform.isAndroid) MaterialYouToggle(),
                 StorageToggle(),
               ],
             ),
@@ -42,7 +46,11 @@ class SettingsScreen extends ConsumerWidget {
               children: [
                 AiToken(),
                 PrivacyPolicy(),
-                if (ref.watch(supabaseUserProvider) != null) ChangePassword(),
+                if (Platform.isIOS) TermsOfUse(),
+                if (ref.watch(supabaseUserProvider) != null) ...[
+                  ChangePassword(),
+                  DeleteAccount(),
+                ],
               ],
             ),
             SettingSection(
