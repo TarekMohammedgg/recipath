@@ -20,12 +20,16 @@
     "passwordsDontMatch": "Passwords don't match",
     "passwordLength": "Password needs to be at least 12 letters long",
     "changePassword": "Change password",
+    "deleteAccount": "Delete account",
+    "reallyDeleteAccount": "Do you really want to delete your account?",
+    "deleteAccountWarning": "You will be taken to a website to request deletion. This permanently deletes your account and your synced data.",
     "passwordChanged": "Password Successfuly changed",
     "resetPassword": "Reset password",
     "reallyResetPassword": "Do you really want to reset the password?",
     "resetMailSent": "A verification code has been sent to your email.\nPlease enter it below.",
     "verifactionEMailSent": "Verifaction E-Mail has been sent",
     "couldNotAuthenticate": "Could not authenticate user",
+    "userAlreadyExists": "An account with this E-Mail already exists",
     "searchFor": "Search for {type}",
     "@searchFor": {
         "placeholders": {
@@ -179,6 +183,7 @@
     "selectFileToImport": "Select a file to import.",
     "exportData": "Export data",
     "privacyPolicy": "Privacy policy",
+    "termsOfUse": "Terms of Use",
     "darkMode": "Dark mode",
     "storageMode": "Storage mode",
     "clear": "Clear",
@@ -221,7 +226,14 @@
     "destinations": "Destinations",
     "somethingUnexpected": "Oops, something unexpected happened",
     "selectOne": "Please select at least one item",
-    "downloadToImport": "Download Recipath:\nhttps://play.google.com/store/apps/details?id=com.cunibongames.recipath\n\nTo import these recipes",
+    "downloadToImport": "Download ReciPath:\n{storeLink}\n\nTo import these recipes",
+    "@downloadToImport": {
+        "placeholders": {
+            "storeLink": {
+                "type": "String"
+            }
+        }
+    },
     "aiToken": "AI Token",
     "aiProvider": "AI Provider",
     "addAiTokenDescription": "Add an AI-Token to use AI features in the app",

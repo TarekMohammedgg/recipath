@@ -180,6 +180,24 @@ abstract class AppLocalizations {
   /// **'Change password'**
   String get changePassword;
 
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteAccount;
+
+  /// No description provided for @reallyDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete your account?'**
+  String get reallyDeleteAccount;
+
+  /// No description provided for @deleteAccountWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'You will be taken to a website to request deletion. This permanently deletes your account and your synced data.'**
+  String get deleteAccountWarning;
+
   /// No description provided for @passwordChanged.
   ///
   /// In en, this message translates to:
@@ -215,6 +233,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not authenticate user'**
   String get couldNotAuthenticate;
+
+  /// No description provided for @userAlreadyExists.
+  ///
+  /// In en, this message translates to:
+  /// **'An account with this E-Mail already exists'**
+  String get userAlreadyExists;
 
   /// No description provided for @searchFor.
   ///
@@ -810,6 +834,12 @@ abstract class AppLocalizations {
   /// **'Privacy policy'**
   String get privacyPolicy;
 
+  /// No description provided for @termsOfUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsOfUse;
+
   /// No description provided for @darkMode.
   ///
   /// In en, this message translates to:
@@ -1065,8 +1095,8 @@ abstract class AppLocalizations {
   /// No description provided for @downloadToImport.
   ///
   /// In en, this message translates to:
-  /// **'Download Recipath:\nhttps://play.google.com/store/apps/details?id=com.cunibongames.recipath\n\nTo import these recipes'**
-  String get downloadToImport;
+  /// **'Download ReciPath:\n{storeLink}\n\nTo import these recipes'**
+  String downloadToImport(String storeLink);
 
   /// No description provided for @aiToken.
   ///
