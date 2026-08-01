@@ -3,7 +3,7 @@ description: "An open-source app that helps you manage your recipes."
 
 publish_to: 'none'
 
-version: 1.10.6+60
+version: 1.11.0+61
 
 environment:
   sdk: ^3.11.0
@@ -38,7 +38,7 @@ dependencies:
   url_launcher: ^6.3.2
   supabase_flutter: ^2.9.1
   logger: ^2.6.1
-  flutter_image_compress: ^2.4.0
+  flutter_image_compress: ^2.5.0
   dynamic_color: ^1.8.1
   purchases_flutter: ^10.4.1
   flutter_localizations:
@@ -70,6 +70,7 @@ dependencies:
   fast_immutable_collections: ^11.2.0
   smart_input_fields: ^0.0.3
   gal: ^2.3.2
+  bound_mutation: ^1.0.3
 
 dependency_overrides:
   googleai_dart: 3.0.0

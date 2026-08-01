@@ -17,7 +17,7 @@ final class TagImportScreenNotifierProvider
         $AsyncNotifierProvider<TagImportScreenNotifier, TagImportScreenState> {
   TagImportScreenNotifierProvider._({
     required TagImportScreenNotifierFamily super.from,
-    required String super.argument,
+    required (String, TagTypeEnum) super.argument,
   }) : super(
          retry: null,
          name: r'tagImportScreenProvider',
@@ -33,7 +33,7 @@ final class TagImportScreenNotifierProvider
   String toString() {
     return r'tagImportScreenProvider'
         ''
-        '($argument)';
+        '$argument';
   }
 
   @$internal
@@ -53,7 +53,7 @@ final class TagImportScreenNotifierProvider
 }
 
 String _$tagImportScreenNotifierHash() =>
-    r'11d1a00cdc348c892cb06b1cc3d0add4e69d6acd';
+    r'e403168be4a4bd382c86e86b04cf75f5d1536530';
 
 final class TagImportScreenNotifierFamily extends $Family
     with
@@ -62,7 +62,7 @@ final class TagImportScreenNotifierFamily extends $Family
           AsyncValue<TagImportScreenState>,
           TagImportScreenState,
           FutureOr<TagImportScreenState>,
-          String
+          (String, TagTypeEnum)
         > {
   TagImportScreenNotifierFamily._()
     : super(
@@ -73,8 +73,8 @@ final class TagImportScreenNotifierFamily extends $Family
         isAutoDispose: true,
       );
 
-  TagImportScreenNotifierProvider call(String path) =>
-      TagImportScreenNotifierProvider._(argument: path, from: this);
+  TagImportScreenNotifierProvider call(String path, TagTypeEnum tagType) =>
+      TagImportScreenNotifierProvider._(argument: (path, tagType), from: this);
 
   @override
   String toString() => r'tagImportScreenProvider';
@@ -82,10 +82,11 @@ final class TagImportScreenNotifierFamily extends $Family
 
 abstract class _$TagImportScreenNotifier
     extends $AsyncNotifier<TagImportScreenState> {
-  late final _$args = ref.$arg as String;
-  String get path => _$args;
+  late final _$args = ref.$arg as (String, TagTypeEnum);
+  String get path => _$args.$1;
+  TagTypeEnum get tagType => _$args.$2;
 
-  FutureOr<TagImportScreenState> build(String path);
+  FutureOr<TagImportScreenState> build(String path, TagTypeEnum tagType);
   @$mustCallSuper
   @override
   void runBuild() {
@@ -103,6 +104,6 @@ abstract class _$TagImportScreenNotifier
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    element.handleCreate(ref, () => build(_$args.$1, _$args.$2));
   }
 }

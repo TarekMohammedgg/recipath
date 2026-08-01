@@ -5,36 +5,46 @@ import 'package:recipath/l10n/app_localizations.dart';
 import 'package:recipath/widgets/generic/cached_async_value_wrapper.dart';
 import 'package:recipath/widgets/generic/info_text.dart';
 import 'package:recipath/widgets/screens/import_screen/dialogs/confirm_creation_dialog.dart';
-import 'package:recipath/widgets/screens/import_screen/grocery_import.dart';
 import 'package:recipath/widgets/screens/import_screen/import_routes.dart';
-import 'package:recipath/widgets/screens/import_screen/providers/grocery_import_screen_notifier.dart';
+import 'package:recipath/widgets/screens/import_screen/providers/tag_import_screen_notifier.dart';
+import 'package:recipath/widgets/screens/import_screen/tag_import.dart';
 
-class GroceryImportScreen extends ConsumerWidget {
-  const GroceryImportScreen({required this.filePath, super.key});
+class RecipeTagImportScreen extends ConsumerWidget {
+  const RecipeTagImportScreen({required this.filePath, super.key});
 
   final String filePath;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final localization = AppLocalizations.of(context)!;
-    final state = ref.watch(groceryImportScreenProvider(filePath));
+    final state = ref.watch(tagImportScreenProvider(filePath, .recipe));
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          localization.importGrocery,
+          localization.importRecipeTag,
           style: TextTheme.of(context).titleLarge,
         ),
+        actions: [
+          IconButton(
+            onPressed: () => ref
+                .read(tagImportScreenProvider(filePath, .recipe).notifier)
+                .refresh(),
+            icon: Icon(Icons.refresh),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          final willCreate = state.value!.entries.where((e) => e.value == null);
+          final willCreate = state.value!.mappedTags.entries.where(
+            (e) => e.value == null,
+          );
           if (willCreate.isNotEmpty) {
             final result = await showDialog<bool>(
               context: context,
               builder: (context) => ConfirmCreationDialog(
                 count: willCreate.length,
-                type: localization.groceries,
+                type: localization.tags,
               ),
             );
 
@@ -43,7 +53,7 @@ class GroceryImportScreen extends ConsumerWidget {
 
           if (context.mounted) {
             context.goRelative(
-              ImportRoutes.recipeTagImport.path,
+              ImportRoutes.groceryTagImport.path,
               extra: filePath,
             );
           }
@@ -57,8 +67,10 @@ class GroceryImportScreen extends ConsumerWidget {
           builder: (data) => Column(
             crossAxisAlignment: .start,
             children: [
-              InfoText(text: localization.groceryImportInfo),
-              Expanded(child: GroceryImport(filePath: filePath)),
+              InfoText(text: localization.tagImportInfo),
+              Expanded(
+                child: TagImport(filePath: filePath, tagType: .recipe),
+              ),
             ],
           ),
         ),
