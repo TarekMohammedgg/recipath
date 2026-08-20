@@ -39,7 +39,7 @@ dependencies:
   supabase_flutter: ^2.9.1
   logger: ^2.6.1
   flutter_image_compress: ^2.5.0
-  dynamic_color: ^1.8.1
+  dynamic_color: ^1.9.0
   purchases_flutter: ^10.4.1
   flutter_localizations:
     sdk: flutter
@@ -65,12 +65,12 @@ dependencies:
   pdf: ^3.12.0
   dotted_border: ^3.1.0
   fast_immutable_collections: ^11.2.0
-  smart_input_fields: ^0.0.3
+  smart_input_fields: ^1.0.0
   gal: ^2.3.2
   bound_mutation: ^1.0.3
 
-  material_ui: any
-  cupertino_ui: any
+  material_ui: ^1.0.1
+  cupertino_ui: ^1.0.0
 dev_dependencies:
   sentry_dart_plugin: ^3.1.1
   flutter_test:

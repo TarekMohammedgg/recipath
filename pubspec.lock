@@ -1814,10 +1814,10 @@ packages:
     dependency: "direct main"
     description:
       name: smart_input_fields
-      sha256: f33fb3060162b9d348f63f51f2949076d3ba5216d9b52f7bf8eb3b2b13bd4f28
+      sha256: a4de160e0483f655ffe33afd7d06a0e9389fd42794984a17ee2252ad8c2dc63a
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.3"
+    version: "1.0.0"
   source_gen:
     dependency: transitive
     description:
