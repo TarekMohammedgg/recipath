@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/widgets/screens/settings_screen/providers/material_you_provider.dart';
 import 'package:recipath/widgets/screens/settings_screen/setting_toggle.dart';

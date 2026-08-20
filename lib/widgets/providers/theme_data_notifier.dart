@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/helper/color_extension.dart';
 import 'package:recipath/widgets/providers/material_you_scheme_notifier.dart';
 import 'package:recipath/widgets/screens/settings_screen/providers/dark_mode_provider.dart';

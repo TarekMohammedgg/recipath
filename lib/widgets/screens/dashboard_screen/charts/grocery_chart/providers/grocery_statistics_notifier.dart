@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/repos/recipe_statistics/recipe_statistics_repo_notifier.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

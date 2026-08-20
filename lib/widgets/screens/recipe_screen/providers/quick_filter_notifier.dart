@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:localstorage/localstorage.dart';
 import 'package:recipath/data/tag_data/tag_type_enum.dart';

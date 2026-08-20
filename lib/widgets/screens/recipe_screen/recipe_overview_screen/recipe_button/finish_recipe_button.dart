@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:random_string/random_string.dart';
 import 'package:recipath/application/recipe_statistics_modifier/recipe_statistics_modifier_notifier.dart';

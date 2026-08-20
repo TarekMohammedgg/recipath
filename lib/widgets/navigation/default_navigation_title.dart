@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/widgets/navigation/sync_state_button.dart';
 import 'package:recipath/widgets/providers/supabase/supabase_user_notifier.dart';

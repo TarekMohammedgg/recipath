@@ -1,5 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:random_string/random_string.dart';
 import 'package:recipath/application/quick_shopping_modifier/quick_shopping_modifier_notifier.dart';

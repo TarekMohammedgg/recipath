@@ -1,5 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/common.dart';
 import 'package:recipath/repos/recipe/full_recipe_repo_notifier.dart';
 import 'package:recipath/widgets/screens/dashboard_screen/charts/chart_entry.dart';

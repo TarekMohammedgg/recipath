@@ -1,5 +1,5 @@
 import 'package:duration_picker/duration_picker.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/l10n/app_localizations.dart';
 
 class DurationPickerResponse {

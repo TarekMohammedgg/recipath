@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:flutter/material.dart' as flutter;
+import 'package:material_ui/material_ui.dart' as flutter;
 import 'package:intl/intl.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';

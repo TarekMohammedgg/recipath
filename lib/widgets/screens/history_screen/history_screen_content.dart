@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/common.dart';
 import 'package:recipath/widgets/screens/history_screen/data/history_screen_data.dart';
 import 'package:recipath/widgets/screens/history_screen/history_recipe_item.dart';

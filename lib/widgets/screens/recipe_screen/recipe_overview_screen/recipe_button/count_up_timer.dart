@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CountUpTimer extends StatefulWidget {
   const CountUpTimer({super.key, this.style, required this.startTime});

@@ -1,5 +1,5 @@
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/data/recipe_step_data/recipe_step_data.dart';
 import 'package:recipath/widgets/screens/recipe_screen/create_recipe_screen/recipe_step_item.dart';
 

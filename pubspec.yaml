@@ -69,6 +69,8 @@ dependencies:
   gal: ^2.3.2
   bound_mutation: ^1.0.3
 
+  material_ui: any
+  cupertino_ui: any
 dev_dependencies:
   sentry_dart_plugin: ^3.1.1
   flutter_test:

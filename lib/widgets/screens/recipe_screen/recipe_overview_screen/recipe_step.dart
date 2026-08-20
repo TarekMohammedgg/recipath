@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/data/recipe_data/recipe_data.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/ingredients_list.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/recipe_step_tag.dart';

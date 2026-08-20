@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/widgets/generic/highlight_search/highlight_scope.dart';
 
 class HighlightableText extends StatelessWidget {

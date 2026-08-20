@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:recipath/data/recipe_data/recipe_data.dart';
 import 'package:recipath/domain_service/sound_service/sound_service.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/l10n/app_localizations.dart';
 import 'package:recipath/widgets/screens/recipe_screen/recipe_overview_screen/recipe_button/duration_picker_dialog.dart';
 

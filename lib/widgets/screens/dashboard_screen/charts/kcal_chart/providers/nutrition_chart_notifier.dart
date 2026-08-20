@@ -1,5 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/data/grocery_data/grocery_data.dart';
 import 'package:recipath/widgets/screens/dashboard_screen/charts/chart_entry.dart';
 import 'package:recipath/widgets/screens/dashboard_screen/charts/grocery_chart/providers/grocery_statistics_notifier.dart';

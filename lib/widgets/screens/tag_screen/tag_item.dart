@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/application_constants.dart';
 import 'package:recipath/data/tag_data/tag_data.dart';
 import 'package:recipath/helper/go_router_extension.dart';
