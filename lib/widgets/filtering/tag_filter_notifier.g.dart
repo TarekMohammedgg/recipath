@@ -92,7 +92,7 @@ abstract class _$TagFilterNotifier extends $Notifier<Set<String>> {
   Set<String> build(TagTypeEnum filterType);
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<Set<String>, Set<String>>;
     final element =
         ref.element
@@ -102,6 +102,6 @@ abstract class _$TagFilterNotifier extends $Notifier<Set<String>> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    return element.handleCreate(ref, () => build(_$args));
   }
 }

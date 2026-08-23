@@ -1,7 +1,7 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:recipath/l10n/app_localizations.dart';
-import 'package:recipath/widgets/authentication/reset_state_mutation.dart';
+import 'package:recipath/widgets/authentication/reset_state_action.dart';
 import 'package:recipath/widgets/screens/settings_screen/data/dialogs/clear_all_data_dialog.dart';
 
 class ClearAllData extends ConsumerWidget {
@@ -17,7 +17,7 @@ class ClearAllData extends ConsumerWidget {
         );
 
         if (result == true) {
-          resetStateMutation.run(ref, null);
+          resetStateAction.run(ref);
         }
       },
       icon: Icon(Icons.delete_forever),

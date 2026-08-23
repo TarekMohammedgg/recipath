@@ -5,7 +5,7 @@ import 'package:recipath/domain_service/syncing_service/syncing_service/syncing_
 import 'package:recipath/drift/database_notifier.dart';
 import 'package:recipath/widgets/providers/supabase/supabase_client_notifier.dart';
 
-final resetStateMutation = BoundMutation((tsx, _) async {
+final resetStateAction = BoundAction((tsx) async {
   final supabaseclient = tsx.get(supabaseClientProvider);
   final syncingService = tsx.get(syncingServiceProvider);
   final database = tsx.get(databaseProvider);

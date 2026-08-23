@@ -47,7 +47,7 @@ abstract class _$TimerNotifier extends $Notifier<Map<String, TimerData>> {
   Map<String, TimerData> build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref =
         this.ref as $Ref<Map<String, TimerData>, Map<String, TimerData>>;
     final element =
@@ -58,6 +58,6 @@ abstract class _$TimerNotifier extends $Notifier<Map<String, TimerData>> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }

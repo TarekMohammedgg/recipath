@@ -5795,10 +5795,7 @@ final class $$RecipeTableTableReferences
   static MultiTypedResultKey<$RecipeStepTableTable, List<RecipeStepTableData>>
   _recipeStepTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.recipeStepTable,
-    aliasName: $_aliasNameGenerator(
-      db.recipeTable.id,
-      db.recipeStepTable.recipeId,
-    ),
+    aliasName: 'recipe_table__id__recipe_step_table__recipe_id',
   );
 
   $$RecipeStepTableTableProcessedTableManager get recipeStepTableRefs {
@@ -5818,10 +5815,7 @@ final class $$RecipeTableTableReferences
   static MultiTypedResultKey<$RecipeTagTableTable, List<RecipeTagTableData>>
   _recipeTagTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.recipeTagTable,
-    aliasName: $_aliasNameGenerator(
-      db.recipeTable.id,
-      db.recipeTagTable.recipeId,
-    ),
+    aliasName: 'recipe_table__id__recipe_tag_table__recipe_id',
   );
 
   $$RecipeTagTableTableProcessedTableManager get recipeTagTableRefs {
@@ -5843,10 +5837,7 @@ final class $$RecipeTableTableReferences
   _recipeStatisticTableRefsTable(_$AppDatabase db) =>
       MultiTypedResultKey.fromTable(
         db.recipeStatisticTable,
-        aliasName: $_aliasNameGenerator(
-          db.recipeTable.id,
-          db.recipeStatisticTable.recipeId,
-        ),
+        aliasName: 'recipe_table__id__recipe_statistic_table__recipe_id',
       );
 
   $$RecipeStatisticTableTableProcessedTableManager
@@ -5871,10 +5862,7 @@ final class $$RecipeTableTableReferences
   _recipeShoppingTableRefsTable(_$AppDatabase db) =>
       MultiTypedResultKey.fromTable(
         db.recipeShoppingTable,
-        aliasName: $_aliasNameGenerator(
-          db.recipeTable.id,
-          db.recipeShoppingTable.recipeId,
-        ),
+        aliasName: 'recipe_table__id__recipe_shopping_table__recipe_id',
       );
 
   $$RecipeShoppingTableTableProcessedTableManager get recipeShoppingTableRefs {
@@ -6457,10 +6445,8 @@ final class $$RecipeStepTableTableReferences
     super.$_typedResult,
   );
 
-  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) =>
-      db.recipeTable.createAlias(
-        $_aliasNameGenerator(db.recipeStepTable.recipeId, db.recipeTable.id),
-      );
+  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) => db.recipeTable
+      .createAlias('recipe_step_table__recipe_id__recipe_table__id');
 
   $$RecipeTableTableProcessedTableManager get recipeId {
     final $_column = $_itemColumn<String>('recipe_id')!;
@@ -6483,10 +6469,8 @@ final class $$RecipeStepTableTableReferences
   _recipeStepIngredientTableRefsTable(_$AppDatabase db) =>
       MultiTypedResultKey.fromTable(
         db.recipeStepIngredientTable,
-        aliasName: $_aliasNameGenerator(
-          db.recipeStepTable.id,
-          db.recipeStepIngredientTable.stepId,
-        ),
+        aliasName:
+            'recipe_step_table__id__recipe_step_ingredient_table__step_id',
       );
 
   $$RecipeStepIngredientTableTableProcessedTableManager
@@ -6935,10 +6919,7 @@ final class $$GroceryTableTableReferences
   static MultiTypedResultKey<$IngredientTableTable, List<IngredientTableData>>
   _ingredientTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.ingredientTable,
-    aliasName: $_aliasNameGenerator(
-      db.groceryTable.id,
-      db.ingredientTable.groceryId,
-    ),
+    aliasName: 'grocery_table__id__ingredient_table__grocery_id',
   );
 
   $$IngredientTableTableProcessedTableManager get ingredientTableRefs {
@@ -6958,10 +6939,7 @@ final class $$GroceryTableTableReferences
   static MultiTypedResultKey<$GroceryTagTableTable, List<GroceryTagTableData>>
   _groceryTagTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.groceryTagTable,
-    aliasName: $_aliasNameGenerator(
-      db.groceryTable.id,
-      db.groceryTagTable.groceryId,
-    ),
+    aliasName: 'grocery_table__id__grocery_tag_table__grocery_id',
   );
 
   $$GroceryTagTableTableProcessedTableManager get groceryTagTableRefs {
@@ -7512,10 +7490,8 @@ final class $$IngredientTableTableReferences
     super.$_typedResult,
   );
 
-  static $GroceryTableTable _groceryIdTable(_$AppDatabase db) =>
-      db.groceryTable.createAlias(
-        $_aliasNameGenerator(db.ingredientTable.groceryId, db.groceryTable.id),
-      );
+  static $GroceryTableTable _groceryIdTable(_$AppDatabase db) => db.groceryTable
+      .createAlias('ingredient_table__grocery_id__grocery_table__id');
 
   $$GroceryTableTableProcessedTableManager get groceryId {
     final $_column = $_itemColumn<String>('grocery_id')!;
@@ -7538,10 +7514,8 @@ final class $$IngredientTableTableReferences
   _recipeStepIngredientTableRefsTable(_$AppDatabase db) =>
       MultiTypedResultKey.fromTable(
         db.recipeStepIngredientTable,
-        aliasName: $_aliasNameGenerator(
-          db.ingredientTable.id,
-          db.recipeStepIngredientTable.ingredientId,
-        ),
+        aliasName:
+            'ingredient_table__id__recipe_step_ingredient_table__ingredient_id',
       );
 
   $$RecipeStepIngredientTableTableProcessedTableManager
@@ -7562,10 +7536,7 @@ final class $$IngredientTableTableReferences
   static MultiTypedResultKey<$ShoppingTableTable, List<ShoppingTableData>>
   _shoppingTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.shoppingTable,
-    aliasName: $_aliasNameGenerator(
-      db.ingredientTable.id,
-      db.shoppingTable.ingredientId,
-    ),
+    aliasName: 'ingredient_table__id__shopping_table__ingredient_id',
   );
 
   $$ShoppingTableTableProcessedTableManager get shoppingTableRefs {
@@ -7583,10 +7554,7 @@ final class $$IngredientTableTableReferences
   static MultiTypedResultKey<$StorageTableTable, List<StorageTableData>>
   _storageTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.storageTable,
-    aliasName: $_aliasNameGenerator(
-      db.ingredientTable.id,
-      db.storageTable.ingredientId,
-    ),
+    aliasName: 'ingredient_table__id__storage_table__ingredient_id',
   );
 
   $$StorageTableTableProcessedTableManager get storageTableRefs {
@@ -8153,10 +8121,7 @@ final class $$RecipeStepIngredientTableTableReferences
 
   static $RecipeStepTableTable _stepIdTable(_$AppDatabase db) =>
       db.recipeStepTable.createAlias(
-        $_aliasNameGenerator(
-          db.recipeStepIngredientTable.stepId,
-          db.recipeStepTable.id,
-        ),
+        'recipe_step_ingredient_table__step_id__recipe_step_table__id',
       );
 
   $$RecipeStepTableTableProcessedTableManager get stepId {
@@ -8175,10 +8140,7 @@ final class $$RecipeStepIngredientTableTableReferences
 
   static $IngredientTableTable _ingredientIdTable(_$AppDatabase db) =>
       db.ingredientTable.createAlias(
-        $_aliasNameGenerator(
-          db.recipeStepIngredientTable.ingredientId,
-          db.ingredientTable.id,
-        ),
+        'recipe_step_ingredient_table__ingredient_id__ingredient_table__id',
       );
 
   $$IngredientTableTableProcessedTableManager get ingredientId {
@@ -8575,7 +8537,7 @@ final class $$TagTableTableReferences
   static MultiTypedResultKey<$RecipeTagTableTable, List<RecipeTagTableData>>
   _recipeTagTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.recipeTagTable,
-    aliasName: $_aliasNameGenerator(db.tagTable.id, db.recipeTagTable.tagId),
+    aliasName: 'tag_table__id__recipe_tag_table__tag_id',
   );
 
   $$RecipeTagTableTableProcessedTableManager get recipeTagTableRefs {
@@ -8593,7 +8555,7 @@ final class $$TagTableTableReferences
   static MultiTypedResultKey<$GroceryTagTableTable, List<GroceryTagTableData>>
   _groceryTagTableRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
     db.groceryTagTable,
-    aliasName: $_aliasNameGenerator(db.tagTable.id, db.groceryTagTable.tagId),
+    aliasName: 'tag_table__id__grocery_tag_table__tag_id',
   );
 
   $$GroceryTagTableTableProcessedTableManager get groceryTagTableRefs {
@@ -9019,10 +8981,8 @@ final class $$RecipeTagTableTableReferences
     super.$_typedResult,
   );
 
-  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) =>
-      db.recipeTable.createAlias(
-        $_aliasNameGenerator(db.recipeTagTable.recipeId, db.recipeTable.id),
-      );
+  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) => db.recipeTable
+      .createAlias('recipe_tag_table__recipe_id__recipe_table__id');
 
   $$RecipeTableTableProcessedTableManager get recipeId {
     final $_column = $_itemColumn<String>('recipe_id')!;
@@ -9039,9 +8999,7 @@ final class $$RecipeTagTableTableReferences
   }
 
   static $TagTableTable _tagIdTable(_$AppDatabase db) =>
-      db.tagTable.createAlias(
-        $_aliasNameGenerator(db.recipeTagTable.tagId, db.tagTable.id),
-      );
+      db.tagTable.createAlias('recipe_tag_table__tag_id__tag_table__id');
 
   $$TagTableTableProcessedTableManager get tagId {
     final $_column = $_itemColumn<String>('tag_id')!;
@@ -9420,10 +9378,8 @@ final class $$GroceryTagTableTableReferences
     super.$_typedResult,
   );
 
-  static $GroceryTableTable _groceryIdTable(_$AppDatabase db) =>
-      db.groceryTable.createAlias(
-        $_aliasNameGenerator(db.groceryTagTable.groceryId, db.groceryTable.id),
-      );
+  static $GroceryTableTable _groceryIdTable(_$AppDatabase db) => db.groceryTable
+      .createAlias('grocery_tag_table__grocery_id__grocery_table__id');
 
   $$GroceryTableTableProcessedTableManager get groceryId {
     final $_column = $_itemColumn<String>('grocery_id')!;
@@ -9440,9 +9396,7 @@ final class $$GroceryTagTableTableReferences
   }
 
   static $TagTableTable _tagIdTable(_$AppDatabase db) =>
-      db.tagTable.createAlias(
-        $_aliasNameGenerator(db.groceryTagTable.tagId, db.tagTable.id),
-      );
+      db.tagTable.createAlias('grocery_tag_table__tag_id__tag_table__id');
 
   $$TagTableTableProcessedTableManager get tagId {
     final $_column = $_itemColumn<String>('tag_id')!;
@@ -9823,13 +9777,9 @@ final class $$ShoppingTableTableReferences
     super.$_typedResult,
   );
 
-  static $IngredientTableTable _ingredientIdTable(_$AppDatabase db) =>
-      db.ingredientTable.createAlias(
-        $_aliasNameGenerator(
-          db.shoppingTable.ingredientId,
-          db.ingredientTable.id,
-        ),
-      );
+  static $IngredientTableTable _ingredientIdTable(_$AppDatabase db) => db
+      .ingredientTable
+      .createAlias('shopping_table__ingredient_id__ingredient_table__id');
 
   $$IngredientTableTableProcessedTableManager get ingredientId {
     final $_column = $_itemColumn<String>('ingredient_id')!;
@@ -10376,13 +10326,9 @@ final class $$StorageTableTableReferences
         BaseReferences<_$AppDatabase, $StorageTableTable, StorageTableData> {
   $$StorageTableTableReferences(super.$_db, super.$_table, super.$_typedResult);
 
-  static $IngredientTableTable _ingredientIdTable(_$AppDatabase db) =>
-      db.ingredientTable.createAlias(
-        $_aliasNameGenerator(
-          db.storageTable.ingredientId,
-          db.ingredientTable.id,
-        ),
-      );
+  static $IngredientTableTable _ingredientIdTable(_$AppDatabase db) => db
+      .ingredientTable
+      .createAlias('storage_table__ingredient_id__ingredient_table__id');
 
   $$IngredientTableTableProcessedTableManager get ingredientId {
     final $_column = $_itemColumn<String>('ingredient_id')!;
@@ -10692,13 +10638,8 @@ final class $$RecipeStatisticTableTableReferences
     super.$_typedResult,
   );
 
-  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) =>
-      db.recipeTable.createAlias(
-        $_aliasNameGenerator(
-          db.recipeStatisticTable.recipeId,
-          db.recipeTable.id,
-        ),
-      );
+  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) => db.recipeTable
+      .createAlias('recipe_statistic_table__recipe_id__recipe_table__id');
 
   $$RecipeTableTableProcessedTableManager get recipeId {
     final $_column = $_itemColumn<String>('recipe_id')!;
@@ -11048,13 +10989,8 @@ final class $$RecipeShoppingTableTableReferences
     super.$_typedResult,
   );
 
-  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) =>
-      db.recipeTable.createAlias(
-        $_aliasNameGenerator(
-          db.recipeShoppingTable.recipeId,
-          db.recipeTable.id,
-        ),
-      );
+  static $RecipeTableTable _recipeIdTable(_$AppDatabase db) => db.recipeTable
+      .createAlias('recipe_shopping_table__recipe_id__recipe_table__id');
 
   $$RecipeTableTableProcessedTableManager get recipeId {
     final $_column = $_itemColumn<String>('recipe_id')!;

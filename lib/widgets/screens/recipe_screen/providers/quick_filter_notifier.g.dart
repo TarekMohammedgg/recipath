@@ -105,7 +105,7 @@ abstract class _$QuickFilterNotifier
   Map<QuickFilters, bool> build(TagTypeEnum filterType);
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref =
         this.ref as $Ref<Map<QuickFilters, bool>, Map<QuickFilters, bool>>;
     final element =
@@ -116,6 +116,6 @@ abstract class _$QuickFilterNotifier
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    return element.handleCreate(ref, () => build(_$args));
   }
 }

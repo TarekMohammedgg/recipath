@@ -49,7 +49,7 @@ abstract class _$ShoppingPlanningNotifier
   Map<RecipeData, int>? build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<Map<RecipeData, int>?, Map<RecipeData, int>?>;
     final element =
         ref.element
@@ -59,6 +59,6 @@ abstract class _$ShoppingPlanningNotifier
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }

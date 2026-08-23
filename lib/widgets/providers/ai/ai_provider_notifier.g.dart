@@ -40,7 +40,7 @@ abstract class _$AiProviderNotifier extends $AsyncNotifier<AiProviderData?> {
   FutureOr<AiProviderData?> build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<AsyncValue<AiProviderData?>, AiProviderData?>;
     final element =
         ref.element
@@ -50,6 +50,6 @@ abstract class _$AiProviderNotifier extends $AsyncNotifier<AiProviderData?> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }

@@ -14,7 +14,7 @@ import 'package:recipath/widgets/screens/recipe_screen/providers/recipe_notifier
 import 'package:recipath/widgets/screens/recipe_screen/providers/tags_per_recipe_notifier.dart';
 import 'package:share_plus/share_plus.dart';
 
-final exportRecipeMutation = BoundMutation((tsx, _) async {
+final exportRecipeAction = BoundAction((tsx) async {
   final exportRecipeIds = tsx.get(exportProvider);
 
   final groceriesMap = await tsx.get(groceryProvider.future);
