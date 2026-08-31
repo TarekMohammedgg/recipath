@@ -6,6 +6,7 @@ import 'package:recipath/data/ai_provider/ai_provider_data.dart';
 import 'package:recipath/data/ai_provider_enum.dart';
 import 'package:recipath/l10n/app_localizations.dart';
 import 'package:recipath/widgets/providers/ai/ai_model_notifier.dart';
+import 'package:recipath/widgets/screens/import_screen/mutation/ai_import_exception.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final _handshake = Mutation<GenerateResponseHelper>();
@@ -83,11 +84,13 @@ class _AiTokenDialogState extends ConsumerState<AiTokenDialog> {
                 return null;
               },
             ),
-            if (handshakeState is MutationError)
+            if (handshakeState case MutationError(:final error))
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  localization.somethingWentWrong,
+                  AiImportException.classify(
+                    error,
+                  ).localizedMessage(localization),
                   style: TextTheme.of(
                     context,
                   ).bodyMedium?.copyWith(color: ColorScheme.of(context).error),

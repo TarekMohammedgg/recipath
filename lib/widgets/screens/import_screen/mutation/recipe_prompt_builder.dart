@@ -141,7 +141,7 @@ TIMERS:
     return RecipePrompt(
       backend: backend,
       systemPrompt: systemPrompt,
-      outputSchema: RecipeSchema.wrap(RecipeSchema.decode(jsonSchemaString)),
+      outputSchema: RecipeSchema.parse(jsonSchemaString),
     );
   }
 }

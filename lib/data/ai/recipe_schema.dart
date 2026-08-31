@@ -3,6 +3,12 @@ import 'dart:convert';
 import 'package:schemantic/schemantic.dart';
 
 abstract class RecipeSchema {
+  static SchemanticType<Map<String, dynamic>> parse(String raw) =>
+      SchemanticType.from<Map<String, dynamic>>(
+        jsonSchema: strictify(jsonDecode(raw) as Map<String, dynamic>),
+        parse: (json) => (json as Map).cast<String, dynamic>(),
+      );
+
   static Map<String, dynamic> strictify(Map<String, dynamic> node) {
     const droppedKeywords = {r'$schema', 'nullable'};
     final out = <String, dynamic>{};
@@ -36,14 +42,4 @@ abstract class RecipeSchema {
 
     return out;
   }
-
-  static SchemanticType<Map<String, dynamic>> wrap(
-    Map<String, dynamic> jsonSchema,
-  ) => SchemanticType.from<Map<String, dynamic>>(
-    jsonSchema: strictify(jsonSchema),
-    parse: (json) => (json as Map).cast<String, dynamic>(),
-  );
-
-  static Map<String, dynamic> decode(String raw) =>
-      jsonDecode(raw) as Map<String, dynamic>;
 }
