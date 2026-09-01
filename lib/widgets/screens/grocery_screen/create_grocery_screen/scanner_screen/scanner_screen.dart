@@ -107,6 +107,11 @@ class _ScannerScreenState extends State<ScannerScreen> {
                         barcode: barcode,
                       );
                     }
+                  } else {
+                    await showCannotFindDialog(
+                      localization: localization,
+                      barcode: barcode,
+                    );
                   }
                 }
               } catch (e) {
